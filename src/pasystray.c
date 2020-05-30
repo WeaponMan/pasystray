@@ -39,6 +39,9 @@ int main(int argc, char *argv[])
 {
     GOptionEntry* options = get_options();
     GError *error = NULL;
+
+    gdk_set_allowed_backends ("x11");
+
     gtk_init_with_args(&argc, &argv, NULL, options, NULL, &error);
     if(error)
     {
